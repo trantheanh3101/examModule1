@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ex1</title>
+</head>
+<body>
+  <script>
+    let array = [];
+    let n = prompt("nhập số item trong mảng")
+    if (n > 20 || n < 0){
+      n = prompt("nhập lại số item trong mảng vì vượt quá 20 item ");  // kiểm tra số pần tử nhập vào
+    }
+    for (let i = 0; i < n; i++) {
+      let num = +prompt("nhập number " + (i+1));
+      array.push(num);
+    }
+    document.write("Mảng nhập vào là : " + array + "<br>");  // hien thi mang
+
+    let sumeven = 0;
+    let sumle = 0;
+    for (let i = 0; i <array.length; i++) {
+      if (array[i] % 2 === 0){
+        sumeven+=array[i];
+      } else {
+        sumle += array[i];
+      }
+    }
+
+    document.write("kết quả = (tổng số chẵn - tổng số lẻ ) = "+ (sumeven - sumle));
+  </script>
+</body>
+</html>

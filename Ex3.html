@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>số nguyên tố </title>
+</head>
+<body>
+    <p id="kq"></p>
+    <script>
+        let arrayInt = [1,5,6,23,8,47,10,3];
+        function checkPrime(n){  // check số nguyên tố
+            if (n<2) return false;
+            if (n<4) return true;
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+                if (n%i===0) return false;
+            }
+            return true;
+        }
+
+        function arrange(arr) {   // Sắp xêp mảng theo giá trị tăng dần
+            arr.sort(function(a, b) {
+                return a - b;
+            });
+            return arr;
+        }
+
+        function checkAndArrange(arr2) {
+            let arrayPrime = [];
+            for (let i = 0; i < arr2.length; i++) {
+                if (checkPrime(arr2[i]) === true){
+                    arrayPrime.push(arr2[i]);
+                }
+            }
+            arrange(arrayPrime);
+            return arrayPrime;
+        }
+        document.getElementById("kq").innerHTML = "Mảng số nguyên tố sau khi kiểm tra và sắp xếp là : "  + checkAndArrange(arrayInt);
+    </script>
+</body>
+</html>
