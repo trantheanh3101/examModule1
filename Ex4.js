@@ -37,28 +37,29 @@ class Mobile{
 
 
 let arrayMobile = [];
-let mobile1 = Mobile(1,"iphone6","apple",1000);
+let mobile1 = new Mobile(1,"iphone6","apple",1000);
 
-
+// document.getElementById("showList").innerHTML = mobile1;
 arrayMobile.push(mobile1);
 
-document.getElementById("showList").innerHTML = arrayMobile;
+// document.getElementById("showList").innerHTML = arrayMobile;
 
-// function addMoile() {
-//     let numMobile = +prompt("fill num");
-//     let nameMobile = prompt("fill name mobile");
-//     let maunufactor = prompt("fill manufactor");
-//     let priceMobile = prompt("fill price");
-//     let newmobile = new Mobile(numMobile,nameMobile,maunufactor,priceMobile);
-//     arrayMobile.push(newmobile);
-// }
-//
-// function display(array) {
-//     for (let i = 0; i < array.length; i++) {
-//         document.write(array[i] + "<br>");
-//     }
-// }
-// document.getElementById("showList").innerHTML = display(arrayMobile);
+function addMoile() {
+    let numMobile = +prompt("fill num");
+    let nameMobile = prompt("fill name mobile");
+    let maunufactor = prompt("fill manufactor");
+    let priceMobile = prompt("fill price");
+    let newmobile = new Mobile(numMobile,nameMobile,maunufactor,priceMobile);
+    arrayMobile.push(newmobile);
+    document.getElementById("showList").innerHTML = display(arrayMobile);
+}
+
+function display(array) {
+    for (let i = 0; i < array.length; i++) {
+        document.write(array[i] + "<br>");
+    }
+}
+document.getElementById("showList").innerHTML = display(arrayMobile);
 
 
 
